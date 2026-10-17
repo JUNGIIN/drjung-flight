@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DR_Jung Flight - 인천 출발 일본 항공권 가격달력">
+  <meta name="theme-color" content="#0b1020">
+  <meta property="og:title" content="DR_Jung Flight">
+  <meta property="og:description" content="인천에서 일본으로 가는 항공권의 저가 날짜를 확인하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://drjun.github.io/drjung-flight/">
+  <link rel="canonical" href="https://drjun.github.io/drjung-flight/">
+  <title>DR_Jung Flight · 일본 항공권 가격달력</title>
+  <!-- Travelpayouts 사이트 소유 확인용 META 태그가 발급되면 이 줄 아래에 붙여넣으세요. -->
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./config.js"></script>
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="DR_Jung Flight 홈">
+        <span class="brand-mark">DR</span>
+        <span>
+          <strong>DR_Jung</strong>
+          <small>Flight Calendar</small>
+        </span>
+      </a>
+      <span class="status-pill"><span class="status-dot"></span> ICN → JAPAN</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">INCHEON → JAPAN</p>
+          <h1>일본 항공권,<br><span>저렴한 날짜부터</span> 찾아보세요.</h1>
+          <p class="lead">인천(ICN) 출발 기준으로 일본 주요 도시의 Aviasales 가격달력을 빠르게 전환해 확인할 수 있는 DR_Jung 전용 페이지입니다.</p>
+          <div class="hero-meta">
+            <span>출발지 <b>인천 ICN</b></span>
+            <span>통화 <b>KRW</b></span>
+            <span>언어 <b>한국어</b></span>
+          </div>
+        </div>
+        <div class="route-card" aria-label="현재 노선">
+          <div class="airport"><b>ICN</b><span>인천</span></div>
+          <div class="route-line"><span>✈</span></div>
+          <div class="airport airport-right"><b id="hero-destination-code">TYO</b><span id="hero-destination-name">도쿄</span></div>
+        </div>
+      </section>
+
+      <section class="panel destination-panel" aria-labelledby="dest-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DESTINATION</p>
+            <h2 id="dest-title">목적지를 선택하세요</h2>
+          </div>
+          <p>도시 버튼을 누르면 아래 가격달력이 해당 노선으로 바뀝니다.</p>
+        </div>
+        <div class="destination-grid" id="destination-list">
+          <button class="destination active" data-code="TYO" data-name="도쿄"><span>東京</span><b>도쿄</b><small>TYO</small></button>
+          <button class="destination" data-code="OSA" data-name="오사카"><span>大阪</span><b>오사카</b><small>OSA</small></button>
+          <button class="destination" data-code="FUK" data-name="후쿠오카"><span>福岡</span><b>후쿠오카</b><small>FUK</small></button>
+          <button class="destination" data-code="SPK" data-name="삿포로"><span>札幌</span><b>삿포로</b><small>SPK</small></button>
+          <button class="destination" data-code="OKA" data-name="오키나와"><span>沖縄</span><b>오키나와</b><small>OKA</small></button>
+        </div>
+      </section>
+
+      <section class="panel calendar-panel" aria-labelledby="calendar-title">
+        <div class="section-heading calendar-heading">
+          <div>
+            <p class="eyebrow">LOW PRICE CALENDAR</p>
+            <h2 id="calendar-title">인천 → <span id="calendar-destination-name">도쿄</span> 가격달력</h2>
+          </div>
+          <div class="controls" aria-label="가격달력 옵션">
+            <label class="switch-control"><input id="one-way" type="checkbox"><span>편도</span></label>
+            <label class="switch-control"><input id="direct-only" type="checkbox"><span>직항만</span></label>
+            <label class="select-control">기간
+              <select id="period">
+                <option value="year">1년</option>
+                <option value="month">1개월</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div id="widget-state" class="widget-state" role="status"></div>
+        <div id="aviasales-calendar" class="widget-host" aria-live="polite"></div>
+        <noscript><p class="notice">가격달력을 사용하려면 브라우저에서 JavaScript를 활성화해야 합니다.</p></noscript>
+      </section>
+
+      <section class="info-grid">
+        <article class="info-card">
+          <span class="info-number">01</span>
+          <h3>가격은 변동될 수 있습니다</h3>
+          <p>달력에 표시되는 금액은 항공권 탐색을 돕기 위한 가격 정보입니다. 실제 예약 단계에서 좌석과 조건에 따라 달라질 수 있습니다.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-number">02</span>
+          <h3>날짜를 눌러 상세 검색</h3>
+          <p>가격달력에서 원하는 날짜를 선택하면 Aviasales 검색 결과로 이동해 해당 날짜의 항공편을 비교할 수 있습니다.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-number">03</span>
+          <h3>DR_Jung 서버와 분리</h3>
+          <p>이 페이지는 GitHub Pages에서 공개되며 VPN 내부의 서버 모니터, 로그, 서버 주소와는 분리되어 있습니다.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>DR_Jung Flight</span>
+      <span>Flight price calendar powered by Travelpayouts / Aviasales</span>
+    </footer>
+  </div>
+</body>
+</html>
