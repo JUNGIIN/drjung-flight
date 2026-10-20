@@ -1,12 +1,10 @@
 /*
- * Travelpayouts 가입 후 아래 marker 값만 수정하세요.
- * 예: marker: "1234567"
- * Partner ID는 비밀번호/API 토큰이 아니며 위젯 코드에 공개되는 식별자입니다.
+ * DR_Jung Flight - official Aviasales Pricing Calendar connection.
+ * widgetUrl is the src value copied from the Travelpayouts widget builder.
+ * These are public widget identifiers, NOT API credentials.
+ * Never put an API token or account password in this public file.
+ * Keep the existing Drive script in index.html unchanged.
  */
-window.DRJUNG_FLIGHT_CONFIG = {
-  marker: "",
-  origin: "ICN",
-  locale: "ko",
-  currency: "krw",
-  searchUrl: "hydra.aviasales.com"
-};
+window.DRJUNG_FLIGHT_CONFIG = Object.freeze({
+  widgetUrl: "https://tpwgts.com/content?currency=krw&trs=587026&shmarker=791535&searchUrl=www.aviasales.com%2Fsearch&locale=ko&powered_by=true&origin=ICN&destination=TYO&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%230C73FE&color_background=%23ffffff&dark=%23000000&light=%23FFFFFF&achieve=%2345AD35&promo_id=4041&campaign_id=100"
+});
